@@ -12,16 +12,16 @@ Product-Assistant is an AI-powered tool that provides detailed information about
 
 ## 🧱 Tech Stack
 
-Streamlit – frontend UI
-GROQ - Lnaguage Model
-Pydantic – data validation
-Python 3.9+ – core language
+- Streamlit – frontend UI
+- GROQ - Lnaguage Model
+- Pydantic – data validation
+- Python 3.9+ – core language
 
 ## 📦 Usage
 
 1. **Install dependencies:**
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 2. **Set up your environment:**
 - Add your Groq API key to the `.env` file:
@@ -53,7 +53,7 @@ streamlit run productAssistant.py
 See [requirements.txt](requirements.txt) for the full list.
 
 ## App Link
-[text](https://mohit-sample-prd-assistant.streamlit.app/)
+[Product Assistant](https://mohit-sample-prd-assistant.streamlit.app/)
 
 ## Screeshot
 ![alt text](Product-Assistant.png)
