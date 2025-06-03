@@ -1,12 +1,12 @@
 from pydantic import BaseModel, Field
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 import os
 from dotenv import load_dotenv
 load_dotenv()
 
-os.environ['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
+os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
 
 import streamlit as st
 st.title("🛍️ Product Assistant 🚀")
@@ -18,7 +18,7 @@ class ProductAssistant(BaseModel):
     product_price: float = Field(description="The price of the product in USD.")
     product_category: str = Field(description="The category of the product.")
 
-model_list = ["gpt-4o", "gpt-4", "gpt-3.5-turbo"]
+model_list = ["gemma2-9b-it", "llama-3.1-8b-instant"]
 
 parser = JsonOutputParser(pydantic_object=ProductAssistant)
 prompt = ChatPromptTemplate.from_messages(
@@ -34,7 +34,7 @@ selected_model = st.selectbox("Select OpenAI Model", model_list)
 button=st.button("Fetch Product Details",type="primary",icon="🔍",use_container_width=True)
 
 if selected_model:
-    model = ChatOpenAI(model=selected_model, temperature=0.7, max_tokens=500)
+    model = ChatGroq(model=selected_model, temperature=0.7, max_tokens=500)
 
 chain = prompt | model | parser
 
