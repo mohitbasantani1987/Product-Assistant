@@ -55,7 +55,7 @@ See [requirements.txt](requirements.txt) for the full list.
 ## App Link
 [Product Assistant](https://mohit-sample-prd-assistant.streamlit.app/)
 
-## Screeshot
+## Screenshot
 ![alt text](Product-Assistant.png)
 
 ## License
